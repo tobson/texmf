@@ -184,6 +184,9 @@
 % only redefine sort@cites for natbib versions < 2009
 \@ifundefined{NAT@sort@cites@}{\def\NAT@sort@cites#1{\edef\NAT@cite@list{#1}}}%
 
+\RequirePackage{ifpdf}
+\ifpdf\PassOptionsToPackage{pdftex}{graphicx}\fi
+
 \RequirePackage{latexsym}% 
 \RequirePackage{graphicx}% 
 \RequirePackage{amssymb}% 
@@ -192,7 +195,6 @@
 \newcommand{\bibstyle@aas}{\bibpunct{(}{)}{;}{a}{}{,}}% 
 \@citestyle{aas}% 
 
-
 \let\@startsection=\@startsection@from@latex
 \def\baselinestretch{1.0}
 \AtBeginDocument{\def\arraystretch{1.0}}
@@ -200,8 +202,6 @@
 \if@revtex@four@one@
 \def\raggedcolumn@sw#1#2{#2}  % implement flushbottom as it was in revtex4
 \fi
-
-\RequirePackage{epsf,graphicx}
 
 %%%%%%%% The following code is taken from size10.clo; it fixes
 %%%%%%%% aastex's definition of type sizes
