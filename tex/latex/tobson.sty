@@ -1,24 +1,31 @@
-\ProvidesPackage{tobi}
+\ProvidesPackage{tobson}
+
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{lmodern}
+\usepackage{microtype}
 
 \usepackage{bm}
 \usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{mleftright}
 
-\renewcommand{\vec}[1]{\ensuremath{\bm{#1}}}
+\usepackage{cleveref}
 
-\newcommand{\rmd}{\ensuremath{\mathrm{d}}}
-\newcommand{\rme}{\ensuremath{\mathrm{e}}}
-\newcommand{\rmi}{\ensuremath{\mathrm{i}}}
+\let\vec\bm
+\let\left\mleft
+\let\right\mright
 
-\newcommand{\kB}{\ensuremath{k_\mathrm{B}}}
+\newcommand{\pder}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\pdder}[2]{\frac{\partial^2{#1}}{\partial{#2}^2}}
 
-\newcommand{\pder}[2]{\ensuremath{\frac{\partial{#1}}{\partial{#2}}}}
-\newcommand{\pdder}[2]{\ensuremath{\frac{\partial^2{#1}}{\partial{#2}^2}}}
+\newcommand{\der}[2]{\frac{\rmd{#1}}{\rmd{#2}}}
+\newcommand{\dder}[2]{\frac{\rmd^2{#1}}{\rmd{#2}^2}}
 
-\newcommand{\der}[2]{\ensuremath{\frac{\rmd{#1}}{\rmd{#2}}}}
-\newcommand{\dder}[2]{\ensuremath{\frac{\rmd^2{#1}}{\rmd{#2}^2}}}
+\newcommand{\Der}[2]{\frac{\mathrm{D}{#1}}{\mathrm{D}{#2}}}
+\newcommand{\DDer}[2]{\frac{\mathrm{D}^2{#1}}{\mathrm{D}^2{#2}}}
 
-\newcommand{\Der}[2]{\ensuremath{\frac{\mathrm{D}{#1}}{\mathrm{D}{#2}}}}
-\newcommand{\DDer}[2]{\ensuremath{\frac{\mathrm{D}^2{#1}}{\mathrm{D}^2{#2}}}}
-
-\newcommand{\ddt}[1]{\ensuremath{\der{#1}{t}}}
-\newcommand{\DDt}[1]{\ensuremath{\Der{#1}{t}}}
+\newcommand{\ddt}[1]{\der{#1}{t}}
+\newcommand{\DDt}[1]{\Der{#1}{t}}
