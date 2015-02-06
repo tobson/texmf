@@ -1,3 +1,4 @@
+*.swp
 ls-R
 bibtex/bib/mendeley.bib
 bibtex/bib/zotero.bib
